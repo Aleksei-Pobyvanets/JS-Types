@@ -29,10 +29,24 @@ console.log(Res4);
 console.log(resalt);
 
 
-// MyForEach
+// myForEach
 var items=[3,0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2,-3,-1]
 var newItems=[]
 for (var i=0; items.length>i;i++) {
 newItems.push(items[i])
 }
 console.log(newItems)
+
+
+// myMap
+var myMap = new Map();
+
+/*var keyString = 'строка',
+    keyObj = {},
+    keyFunc = function() {};*/
+
+myMap.set(key, "значение");
+myMap.get(key);    
+console.log (myMap)
+
+// mySort
