@@ -39,14 +39,26 @@ console.log(newItems)
 
 
 // myMap
-var myMap = new Map();
+/*var myMap = new Map();
 
 /*var keyString = 'строка',
     keyObj = {},
-    keyFunc = function() {};*/
+    keyFunc = function() {};
 
 myMap.set(key, "значение");
 myMap.get(key);    
-console.log (myMap)
+console.log (myMap)*/
+
+var mass={
+    "one": 11,
+    "two": "hello",
+    "three": true,
+}
+var newMass={}
+for(var key in mass){
+    alert += key + mass[key];
+}
+console.log(mass)
 
 // mySort
+var Numbers=[3, 0, -5, 1, 44, -12, 3, 0, 0, 1, 2, -3, -3, 2, 1, 4, -2, -3, -1]
