@@ -85,48 +85,36 @@ console.log(newItems)
 // Функціональні кроки ECMA-262, версія 5, 15.4.4.19
 // Довідка: http://es5.github.io/#x15.4.4.19
 if (!Array.prototype.map) {
-
 Array.prototype.map = function(callback, thisArg) {
-
     var T, A, k;
-
     if (this == null) {
     throw new TypeError(' this is null or not defined');
     }
-
     // 1. Нехай O дорівнює результату виклику ToObject з |this| 
     //    в якості аргументу.
     var O = Object(this);
-
     // 2. Нехай lenValue дорівнює результату виклику внутрішнього методу O
     //    Get з аргументом "length".
     // 3. Нехай len дорівнює ToUint32(lenValue).
     var len = O.length >>> 0;
-
     // 4. Якщо IsCallable(callback) дорівнює false, викинути виняток TypeError.
     // Див.: http://es5.github.com/#x9.11
     if (typeof callback !== 'function') {
     throw new TypeError(callback + ' is not a function');
     }
-
     // 5. Якщо надано thisArg, нехай T дорівнює thisArg; інакше нехай T дорівнює undefined.
     if (arguments.length > 1) {
     T = thisArg;
     }
-
     // 6. Нехай A дорівнює новому масиву, створеному виразом new Array(len), 
     //    де Array - це стандартний вбудований конструктор з таким ім'ям, 
     //    а len дорівнює значенню len.
     A = new Array(len);
-
     // 7. Нехай k дорівнює 0
     k = 0;
-
     // 8. Повторювати, доки k < len
     while (k < len) {
-
     var kValue, mappedValue;
-
     // а. Нехай Pk дорівнює ToString(k).
     //   Цей метод неявно застосовується до лівого операнда оператора in
     // б. Нехай kPresent дорівнює результату виклику внутрішнього методу O
@@ -134,16 +122,13 @@ Array.prototype.map = function(callback, thisArg) {
     //   Цей крок можна об'єднати з в
     // в. Якщо kPresent дорівнює true, тоді
     if (k in O) {
-
         // і. Нехай kValue дорівнює результату виклику внутрішнього методу O
         //    Get з аргументом Pk.
         kValue = O[k];
-
         // ii. Нехай mappedValue дорівнює результату виклику внутрішнього
         //     методу callback Call з T у якості значення this та списком 
         //     аргументів, що містить kValue, k та O.
         mappedValue = callback.call(T, kValue, k, O);
-
         // iii. Викликати внутрішній метод A DefineOwnProperty з аргументами
         // Pk, Property Descriptor
         // { Value: mappedValue,
@@ -166,7 +151,6 @@ Array.prototype.map = function(callback, thisArg) {
     // г. Збільшити k на 1.
     k++;
     }
-
     // 9. повернути A
     return A;
 };
@@ -224,3 +208,16 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
     assert.equal(zeroFuel(100, 50, 1),);
     };
     
+
+// Задача на расход топлива у машини
+var rashod =25
+var distanse =50
+var fuel =2
+function gg(rashod,distanse,fuel){
+  if((rashod*fuel)>=distanse){
+   return true;
+  }else if((rashod*fuel)< distanse){
+     return false;
+  }
+}
+console.log(gg(rashod,distanse, fuel))
